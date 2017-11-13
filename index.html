@@ -1,9 +1,44 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>Video.js 6.2.8</title>
-	<link href="css/video-js.css" rel="stylesheet">	
+
+	<head>
+		<meta charset="utf-8" />
+
+		<!--强制让文档的宽度与设备的宽度保持1:1，并且文档最大的宽度比例是1.0，且不允许用户点击屏幕放大浏览-->
+		<meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no" />
+		<!--WebApp全屏模式   隐藏地址栏-->
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<!--苹果强制全屏显示-->
+		<meta name="apple-touch-fullscreen" content="yes" />
+		<meta http-equiv="pragma" content="no-cache" />
+		<meta http-equiv="expires" content="0">
+		<!--强制全屏显示-->
+		<meta name="full-screen" content="yes" />
+		<!--制定iphone中safari顶端的状态条的样式（default:白色，black:黑色，black-translucent：半透明）-->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<!--告诉设备忽略将页面中的数字识别为电话号码 -->
+		<meta name="format-detection" content="telephone=no" />
+		<!--告诉设备忽略将页面中的地址识别 -->
+		<meta name="format-detection" content="address=no" />
+		<title></title>
+		<link href="lib/ionic/css/ionic.css" rel="stylesheet">
+		<script src="lib/ionic/js/ionic.bundle.js"></script>
+		<script src="js/zepto.min.js"></script>
+		<script type="text/javascript">
+			//换算函数  10px=1rem
+			function refresh() {
+				var deviceWidth = document.documentElement.clientWidth;
+				if(deviceWidth > 750) {
+					document.documentElement.style.fontSize = 750 / 7.5 + "px";
+				} else {
+					document.documentElement.style.fontSize = deviceWidth / 7.5 + "px";
+				}
+			}
+			refresh();
+			window.onresize = function() {
+				refresh();
+			}
+		</script>
 	<style>
 		body{background-color: #191919}
 		.m{ width: 740px; height: 400px; margin-left: auto; margin-right: auto; margin-top: 100px; }
